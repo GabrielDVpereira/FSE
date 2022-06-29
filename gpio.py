@@ -1,6 +1,6 @@
 '''   
     Programa simples que conecta leds em GPIO 
-    https://sourceforge.net/p/raspberry-gpio-python/wiki
+    https://sourceforge.net/p/raspberry-gpio-python/wiki/Outputs/
 
 '''
 import RPi.GPIO as GPIO
