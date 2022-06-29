@@ -1,3 +1,5 @@
+# https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM/
+
 import RPi.GPIO as GPIO
 from time import sleep
 
