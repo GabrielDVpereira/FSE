@@ -1,7 +1,6 @@
 '''   
     Programa simples que conecta leds em GPIO 
     https://sourceforge.net/p/raspberry-gpio-python/wiki/Outputs/
-
 '''
 import RPi.GPIO as GPIO
 from time import sleep
@@ -16,7 +15,7 @@ leds = [13, 19, 26]
 
 def configura_gpio():
     for l in leds:
-        GPIO.setup(l, GPIO.OUT) # Dispositivo de saida
+        GPIO.setup(l, GPIO.OUT)
 
 
 def liga_lampadas(estado):
