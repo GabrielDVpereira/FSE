@@ -29,13 +29,12 @@ int main(int argc, char *argv[]) {
 	// Criar Socket
 	if((clienteSocket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0)
 		printf("Erro no socket()\n");
-
 	// Construir struct sockaddr_in
 	memset(&servidorAddr, 0, sizeof(servidorAddr)); // Zerando a estrutura de dados
 	servidorAddr.sin_family = AF_INET;
 	servidorAddr.sin_addr.s_addr = inet_addr(IP_Servidor);
 	servidorAddr.sin_port = htons(servidorPorta);
-
+	printf("%d\n", clienteSocket);
 	// Connect
 	if(connect(clienteSocket, (struct sockaddr *) &servidorAddr, 
 							sizeof(servidorAddr)) < 0)
@@ -45,7 +44,6 @@ int main(int argc, char *argv[]) {
 
 	if(send(clienteSocket, mensagem, tamanhoMensagem, 0) != tamanhoMensagem)
 		printf("Erro no envio: numero de bytes enviados diferente do esperado\n");
-
 	totalBytesRecebidos = 0;
 	while(totalBytesRecebidos < tamanhoMensagem) {
 		if((bytesRecebidos = recv(clienteSocket, buffer, 16-1, 0)) <= 0)
